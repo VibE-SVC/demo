@@ -1,3 +1,2 @@
-# demo
-VibE-SVC demo page
-https://vibe-svc.github.io/demo/
+# MIDI-Voice
+MIDI-Voice demo page
