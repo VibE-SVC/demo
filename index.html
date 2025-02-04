@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>MIDI-Voice Demo</title>
+        <title>ViBE-SVC Demo</title>
         <!-- Font Awesome icons (free version)-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -60,7 +60,7 @@
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">MIDI-Voice2</a>
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">ViBE-SVC</a>
                 <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
@@ -78,11 +78,11 @@
         <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0 text-center">Hierarchical Diffusion Model for Zero-Shot
-                  Singing Voice Synthesis with MIDI Priors</h1>
+                <h1 class="masthead-heading mb-0 text-center">VibE-SVC: Vibrato Extraction with High Frequency Pitch for Singing Voice
+                  Conversion</h1>
                 <!-- Masthead Subheading-->
 		        <p class="pre-wrap lead">&nbsp;</p>
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Dong-Min Byun, Seung-Bin Kim, and Seong-Whan Lee</p>
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Anonymous submission to Interspeech 2025</p>
             </div>
         </header>
 
@@ -100,11 +100,11 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <div class="col-lg-12 ml-auto">
-                        <p class="pre-wrap lead">Singing voice synthesis systems have significantly advanced; however achieving high-quality singing voices in zero-shot tasks remains challenging. Traditional singing voice synthesis models face challenges in predicting the fundamental frequency (F0) of unseen speakers. In this study, we propose MIDI-Voice 2, which uses MIDI-driven priors to achieve high-quality singing voice synthesis, even in zero-shot tasks. We introduce a diffusion-based singing voice synthesis model that operates without F0. MIDI-Voice 2 consists of two diffusion models: a prior generator and a singing voice generator. The prior generator uses MIDI-driven priors, including accurate melody, to generate MIDI-style priors, and the singing voice generator uses these MIDI-style priors along with content and timbre information to generate singing voices. Disentangling the melody from timbre allows speaker adaptation without predicting the F0 of an unseen speaker. Additionally, we use a transformer-based diffusion to generate higher-quality audio in zero-shot tasks. Our experiments demonstrate that MIDI-Voice 2 improves speaker-adaptation without F0 and produces high-quality audio in zero-shot tasks.</p>
+                        <p class="pre-wrap lead">Controlling singing style is crucial for achieving an expressive and natural singing voice. Among various style factors, vibrato plays a key role in conveying emotions and enhancing musical depth. However, modeling vibrato remains challenging due to its dynamic nature, making it difficult to control in singing voice conversion. To address this, we propose VibE-SVC, a controllable singing voice conversion model that explicitly extracts and manipulates vibrato using discrete wavelet transform. Unlike previous methods that model vibrato implicitly, our approach decomposes the pitch contour into frequency components, enabling precise conversion between vibrato and straight singing. This allows vibrato control for enhanced flexibility. Experimental results show that VibE-SVC effectively transforms singing styles while preserving speaker similarity. Both subjective and objective evaluations confirm high-quality conversion.</p>
                     </div>
                     <div class="text-center">
                         <br>
-                        <img width="100%" src="./assets/figure/overall_arch.png">
+                        <img width="100%" src="./assets/figure/fig_svc.png">
                     </div>
                 </div>
             </div>

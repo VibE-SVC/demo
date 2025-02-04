@@ -1,2 +1,2 @@
-# MIDI-Voice
-MIDI-Voice demo page
+# ViBE-SVC
+ViBE-SVC demo page
