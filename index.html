@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+          <style type="text/css">
+                 a:link { color: black; text-decoration: none;}
+                 a:visited { color: black; text-decoration: none;}
+                 a:hover { color: blue; text-decoration: underline;}
+          </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>ViBE-SVC Demo</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="css/heading.css">
+        <link rel="stylesheet" href="css/body.css">
+        <script>
+          function createTable(dir, exp, audio, script, idx=1, row=3){
+
+              html = "<table class=\"table table-responsive align-content-center\" style=\"background-color: white; border-radius: 20px\">"
+              html +="<thead><tr><th colspan=\"5\" style=\"width: 40%\">"
+              html +="<div class=\"text-left\">"
+              html += "Script: <i>"
+              html += script["script"]
+              html +="</i></div>"
+              html +="<div class=\"text-left\">"
+              html += "\n(Pronunciation): <i>"
+              html += script["pronun"]
+              html +="</i></div>"
+              html += "</th></tr></thead>"
+              html +="<tbody><tr>"
+              for(var key in exp){
+                  if (idx % row == 0){
+                      html += "<tr>"    
+                  }
+                  html +="<td style=\"vertical-align: top;\"><p></p>"
+                  html +=key
+                  html +="<div class=\"text-center\"><audio"
+                  if (row>3){
+                      html+= " controls=\"controls\" style=\"width: 190px;\"><source src="
+                  } else {
+                      html+= " controls=\"controls\"><source src="
+                  }
+                  f = dir + "/" + exp[key] + ".wav"
+                  html += f                    
+                  html +=" type=\"audio/wav\" /></audio></div></td>"
+                  idx += 1
+                  if (idx % row == 0){
+                      html += "</tr>"    
+                  }
+              }
+              html +="</tr></tbody></table>"
+              return html
+          }
+      </script>
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">ViBE-SVC</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#abstract">Abstact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#style_only">Style-Only<br>Conversion</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#timbre_n_style">Timbre & Style<br>Conversion</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#vibrato_scaling">Vibrato scaling</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0 text-center">VibE-SVC: Vibrato Extraction with High Frequency F0 contour for Singing Voice
+                  Conversion</h1>
+                <!-- Masthead Subheading-->
+		        <p class="pre-wrap lead">&nbsp;</p>
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Anonymous submission to Interspeech 2025</p>
+            </div>
+        </header>
+
+        <!-- Abstraction -->
+        <section class="page-section portfolio" id="abstract">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <div class="text-center">
+                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Abstract</h2>
+                </div>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 ml-auto">
+                        <p class="pre-wrap lead">Controlling singing style is crucial for achieving an expressive and natural singing voice. Among the various style factors, vibrato plays a key role in conveying emotions and enhancing musical depth. However, modeling vibrato remains challenging due to its dynamic nature, making it difficult to control in singing voice conversion. To address this, we propose VibE-SVC, a controllable singing voice conversion model that explicitly extracts and manipulates vibrato using discrete wavelet transform. Unlike previous methods that model vibrato implicitly, our approach decomposes the F0 contour into frequency components, enabling precise transfer. This allows vibrato control for enhanced flexibility. Experimental results show that VibE-SVC effectively transforms singing styles while preserving speaker similarity. Both subjective and objective evaluations confirm high-quality conversion.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <br>
+                        <img width="100%" src="./assets/figure/fig_svc.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="page-section bg-info text-white mb-0" id="style_only">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="page-section-heading d-inline-block">Style-Only converison</h2>
+              <p class="pre-wrap lead">
+                <!-- title description -->
+
+              </p>
+            </div>
+
+            <div class="divider-custom divider-light">
+              </div>
+              <div class="row">
+                  <div class="col-lg-12 ml-auto">
+                    <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
+                      <thead><tr>
+                        <th style="width:8%">Source Singing Voice</th>
+                        <th style="width:8%">Target speaker</th>
+                        <th style="width: 23%"> Generted</th>
+                        <th style="width: 22%">         </th>
+                        <th style="width: 1%">         </th>
+                      </tr></thead>
+                      <tr>
+                        <th colspan="5">
+                        <!-- description     -->
+                        </th>
+                      </tr>
+                      <tbody>
+                        <!-- Audio sample -->
+                      </tbody>
+                      <tr>
+                        <th colspan="5">
+                        <!-- description     -->
+                        </th>
+                      </tr>
+		      <tbody>
+                        <!-- audio samples -->
+                      </tbody>
+                      <tr>
+                        <th colspan="5">
+                        <!-- description     -->
+                        </th>
+                      </tr>
+		      <tbody>
+                        <!-- audio samples -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Timbre & style conversion -->
+        <section class="page-section bg-info text-white mb-0" id="timbre_n_style">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="page-section-heading d-inline-block">Timbre & Style Conversion</h2>
+              <p class="pre-wrap lead">
+                <!-- title description -->
+
+              </p>
+            </div>
+
+            <div class="divider-custom divider-light">
+              </div>
+              <div class="row">
+                  <div class="col-lg-12 ml-auto">
+                    <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
+                      <thead><tr>
+                        <th style="width:8%">Source Singing Voice</th>
+                        <th style="width:8%">Target Speaker</th>
+                        <th style="width: 23%"> Generted</th>
+                        <th style="width: 22%">         </th>
+                        <th style="width: 1%">         </th>
+                      </tr></thead>
+                      <tr>
+                        <!-- description -->
+                      </tr>
+		      <tbody>
+                        <!-- audio samples -->
+                      </tbody>
+                      <tr>
+                        <!-- description -->
+                      </tr>
+		      <tbody>
+                        <!-- audio samples -->
+                      </tbody>
+                      <tr>
+                      <th colspan="5">
+                        <!-- description -->
+                    </th>
+                      </tr>
+		      <tbody>
+                        <!-- audio samples -->
+                      </tbody>
+                      <tr>
+                      <th colspan="5">
+                    <!-- description     -->
+                    </th>
+                      </tr>
+		      <tbody>
+                        <!-- audio samples -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </section>
+	    
+
+        <section class="page-section bg-info text-white mb-0" id="vibrato_scaling">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="page-section-heading d-inline-block">Vibrato scaling</h2>
+              <p class="pre-wrap lead">
+                <!-- title description -->
+              </p>
+            </div>
+
+            <div class="divider-custom divider-light">
+              </div>
+              <div class="row">
+                  <div class="col-lg-12 ml-auto">
+                    <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
+                      <thead><tr>
+                        <th style="width:8%">Source Singing Voice</th>
+                        <!-- <th style="width:8%">Target Speaker</th> -->
+                        <th style="width: 23%"> Generted</th>
+                        <th style="width: 22%">         </th>
+                        <th style="width: 1%">         </th>
+                      </tr></thead>
+                      <tr>
+                        <th colspan="5">
+                        <!-- description     -->
+                        </th>
+                      </tr>
+		      <tbody>
+                        <!-- audio samples -->
+                      </tbody>
+                      <tr>
+                        <th colspan="5">
+                            <!-- description -->
+
+                        </th>
+                      </tr>
+		      <tbody>
+                        <!-- audio samples -->
+                      </tbody>
+                      <tr>
+                        <th colspan="5">
+                            <!-- description     -->
+                        </th>
+                      </tr>
+		      <tbody>
+                        <!-- audio samples -->
+		      <tbody>
+            <th colspan="5">
+                <!-- description     -->
+            </th>
+                      </tr>
+		      <tbody>
+                       <!-- audio samples -->
+          </tbody>
+          <tr>
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+ 	
+
+	
+
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <!-- Bootstrap slider JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
+        <!-- slider JS -->
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>
