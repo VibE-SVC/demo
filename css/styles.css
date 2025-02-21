@@ -5752,7 +5752,7 @@ a.close.disabled {
   vertical-align: text-top !important;
 }
 .bg-primary {
-  /* background-color: #1abc9c !important; */
+
   background-color: #703A45 !important;
 }
 a.bg-primary:focus,
@@ -5762,7 +5762,7 @@ button.bg-primary:hover {
   background-color: #148f77 !important;
 }
 .bg-secondary {
-  /* background-color: #2c3e50 !important; */
+
   background-color: #3D4035  !important;
 }
 a.bg-secondary:focus,
@@ -5772,7 +5772,7 @@ button.bg-secondary:hover {
   background-color: #1a252f !important;
 }
 .bg-success {
-  /* background-color: #28a745 !important; */
+
   background-color: #593A49 !important;
 }
 a.bg-success:focus,
@@ -5782,7 +5782,7 @@ button.bg-success:hover {
   background-color: #1e7e34 !important;
 }
 .bg-info {
-  /* background-color: #17a2b8 !important; */
+
   background-color: #3D4035 !important;
 }
 a.bg-info:focus,
